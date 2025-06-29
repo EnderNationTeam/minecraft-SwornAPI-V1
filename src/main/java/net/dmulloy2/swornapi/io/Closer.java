@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.commons.lang.Validate;
+//import org.apache.commons.lang.Validate;
 
 /**
  * Automatically closes a collection of closeable objects.
@@ -42,7 +42,7 @@ public class Closer implements Closeable
 	 */
 	public final <C extends AutoCloseable> C register(C closeable)
 	{
-		Validate.notNull(closeable, "closeable cannot be null!");
+		//Validate.notNull(closeable, "closeable cannot be null!");
 
 		list.add(closeable);
 		return closeable;

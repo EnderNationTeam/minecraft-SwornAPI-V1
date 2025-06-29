@@ -19,7 +19,7 @@ package net.dmulloy2.swornapi.util;
 
 import java.util.*;
 
-import org.apache.commons.lang.Validate;
+//import org.apache.commons.lang.Validate;
 
 /**
  * Util dealing with Lists.
@@ -41,7 +41,7 @@ public class ListUtil
 	 */
 	public static <T> List<T> removeDuplicates(List<T> list)
 	{
-		Validate.notNull(list, "list cannot be null!");
+		//Validate.notNull(list, "list cannot be null!");
 
 		Map<T, Object> map = new LinkedHashMap<>();
 		for (T element : list)
@@ -59,7 +59,7 @@ public class ListUtil
 	@SafeVarargs
 	public static <T> List<T> toList(T... elements)
 	{
-		Validate.notNull(elements, "elements cannot be null!");
+		//Validate.notNull(elements, "elements cannot be null!");
 
 		List<T> list = new ArrayList<>(elements.length);
 		list.addAll(Arrays.asList(elements));
@@ -75,8 +75,8 @@ public class ListUtil
 	 */
 	public static boolean containsIgnoreCase(List<String> list, String string)
 	{
-		Validate.notNull(list, "list cannot be null!");
-		Validate.notNull(string, "string cannot be null!");
+		//Validate.notNull(list, "list cannot be null!");
+		//Validate.notNull(string, "string cannot be null!");
 
 		for (String element : list)
 		{
@@ -94,8 +94,8 @@ public class ListUtil
 	 */
 	public static void removeIgnoreCase(List<String> list, String string)
 	{
-		Validate.notNull(list, "list cannot be null!");
-		Validate.notNull(string, "string cannot be null!");
+		//Validate.notNull(list, "list cannot be null!");
+		//Validate.notNull(string, "string cannot be null!");
 
 		list.removeIf(string::equalsIgnoreCase);
 	}

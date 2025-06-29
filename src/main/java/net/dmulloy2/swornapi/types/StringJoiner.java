@@ -17,7 +17,7 @@
  */
 package net.dmulloy2.swornapi.types;
 
-import org.apache.commons.lang.Validate;
+//import org.apache.commons.lang.Validate;
 
 /**
  * StringJoiner is used to construct a sequence of characters separated by a
@@ -50,7 +50,7 @@ public class StringJoiner
 	 */
 	public StringJoiner(String delimiter)
 	{
-		Validate.notNull(delimiter, "delimiter cannot be null!");
+		//Validate.notNull(delimiter, "delimiter cannot be null!");
 
 		this.delimiter = delimiter;
 		this.builder = new StringBuilder();
@@ -64,7 +64,7 @@ public class StringJoiner
 	 */
 	public final StringJoiner append(final String string)
 	{
-		Validate.notNull(string, "string cannot be null!");
+		//Validate.notNull(string, "string cannot be null!");
 
 		if (! string.isEmpty())
 			builder.append(string).append(delimiter);
@@ -79,7 +79,7 @@ public class StringJoiner
 	 */
 	public final StringJoiner appendAll(final Iterable<String> strings)
 	{
-		Validate.notNull(strings, "strings cannot be null!");
+		//Validate.notNull(strings, "strings cannot be null!");
 
 		for (String string : strings)
 		{
@@ -97,7 +97,7 @@ public class StringJoiner
 	 */
 	public final StringJoiner appendAll(final String... strings)
 	{
-		Validate.noNullElements(strings, "strings cannot have null elements!");
+		//Validate.noNullElements(strings, "strings cannot have null elements!");
 
 		for (String string : strings)
 		{
@@ -127,7 +127,7 @@ public class StringJoiner
 	 */
 	public final StringJoiner setDelimiter(final String delimiter)
 	{
-		Validate.notNull(delimiter, "delimiter cannot be null!");
+		//Validate.notNull(delimiter, "delimiter cannot be null!");
 
 		this.delimiter = delimiter;
 		return this;

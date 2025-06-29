@@ -20,8 +20,8 @@ package net.dmulloy2.swornapi.util;
 import java.lang.reflect.Method;
 import java.text.MessageFormat;
 
-import org.apache.commons.lang.Validate;
-import org.apache.commons.lang.WordUtils;
+//import org.apache.commons.lang.Validate;
+//import org.apache.commons.lang.WordUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 
@@ -47,7 +47,7 @@ public class FormatUtil
 	 */
 	public static String format(String format, Object... objects)
 	{
-		Validate.notNull(format, "format cannot be null!");
+		//Validate.notNull(format, "format cannot be null!");
 
 		try
 		{
@@ -70,7 +70,7 @@ public class FormatUtil
 	 */
 	public static String replaceColors(String message)
 	{
-		Validate.notNull(message, "message cannot be null!");
+		//Validate.notNull(message, "message cannot be null!");
 		message = message.replaceAll("(&([zZ]))", "&z");
 		if (message.contains("&z"))
 		{
@@ -117,7 +117,7 @@ public class FormatUtil
 	 */
 	public static String getFriendlyName(Object obj)
 	{
-		Validate.notNull(obj, "obj cannot be null!");
+		//Validate.notNull(obj, "obj cannot be null!");
 
 		try
 		{
@@ -137,9 +137,10 @@ public class FormatUtil
 	 */
 	public static String getFriendlyName(String string)
 	{
-		Validate.notNull(string, "string cannot be null!");
+		//Validate.notNull(string, "string cannot be null!");
 
-		return WordUtils.capitalize(string.toLowerCase().replaceAll("_", " "));
+		//return WordUtils.capitalize(string.toLowerCase().replaceAll("_", " "));
+		return string.toUpperCase().replaceAll("_", "");
 	}
 
 	/**
@@ -164,7 +165,7 @@ public class FormatUtil
 	 */
 	public static String getArticle(String string)
 	{
-		Validate.notEmpty(string, "string cannot be null or empty!");
+		//Validate.notEmpty(string, "string cannot be null or empty!");
 
 		return VOWELS.indexOf(Character.toLowerCase(string.charAt(0))) != -1 ? "an" : "a";
 	}
@@ -177,7 +178,7 @@ public class FormatUtil
 	 */
 	public static String getPlural(String string, int amount)
 	{
-		Validate.notEmpty(string, "string cannot be null or empty!");
+		//Validate.notEmpty(string, "string cannot be null or empty!");
 
 		amount = Math.abs(amount);
 		if (amount != 1)
@@ -198,7 +199,7 @@ public class FormatUtil
 	 */
 	public static String capitalizeFirst(String string)
 	{
-		Validate.notEmpty(string, "string cannot be null or empty!");
+		//Validate.notEmpty(string, "string cannot be null or empty!");
 		return Character.toUpperCase(string.charAt(0)) + string.substring(1);
 	}
 
@@ -213,8 +214,8 @@ public class FormatUtil
 	 */
 	public static String join(String delimiter, String... args)
 	{
-		Validate.notNull(delimiter, "glue cannot be null");
-		Validate.noNullElements(args, "args cannot have null elements!");
+		//Validate.notNull(delimiter, "glue cannot be null");
+		//Validate.noNullElements(args, "args cannot have null elements!");
 
 		return new StringJoiner(delimiter).appendAll(args).toString();
 	}
@@ -229,7 +230,7 @@ public class FormatUtil
 	 */
 	public static String join(String... args)
 	{
-		Validate.noNullElements(args, "args cannot have null elements!");
+		//Validate.noNullElements(args, "args cannot have null elements!");
 
 		return StringJoiner.SPACE.newString().appendAll(args).toString();
 	}

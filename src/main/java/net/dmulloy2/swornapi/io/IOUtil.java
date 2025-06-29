@@ -28,7 +28,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang.Validate;
+//import org.apache.commons.lang.Validate;
 
 /**
  * Util for dealing with IO stuff
@@ -49,7 +49,7 @@ public class IOUtil
 	 */
 	public static List<String> readLines(File file) throws IOException
 	{
-		Validate.notNull(file, "file cannot be null!");
+		//Validate.notNull(file, "file cannot be null!");
 
 		try (Closer closer = new Closer())
 		{
@@ -77,8 +77,8 @@ public class IOUtil
 	 */
 	public static void writeLines(File file, List<String> lines) throws IOException
 	{
-		Validate.notNull(file, "file cannot be null!");
-		Validate.notNull(lines, "lines cannot be null!");
+		//Validate.notNull(file, "file cannot be null!");
+		//Validate.notNull(lines, "lines cannot be null!");
 
 		try (Closer closer = new Closer())
 		{
@@ -99,8 +99,8 @@ public class IOUtil
 	 */
 	public static String trimFileExtension(File file, String extension)
 	{
-		Validate.notNull(file, "file cannot be null!");
-		Validate.notNull(extension, "extension cannot be null!");
+		//Validate.notNull(file, "file cannot be null!");
+		//Validate.notNull(extension, "extension cannot be null!");
 
 		int index = file.getName().lastIndexOf(extension);
 		return index > 0 ? file.getName().substring(0, index) : file.getName();

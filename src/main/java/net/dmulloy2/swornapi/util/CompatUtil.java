@@ -18,6 +18,7 @@
 package net.dmulloy2.swornapi.util;
 
 import org.bukkit.Material;
+import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.PotionMeta;
@@ -104,7 +105,7 @@ public class CompatUtil
 	{
 		try
 		{
-			return player.getAttribute(org.bukkit.attribute.Attribute.GENERIC_MAX_HEALTH).getValue();
+			return player.getAttribute(Attribute.MAX_HEALTH).getValue();
 		}
 		catch (LinkageError e)
 		{
@@ -123,7 +124,7 @@ public class CompatUtil
 	{
 		try
 		{
-			player.getAttribute(org.bukkit.attribute.Attribute.GENERIC_MAX_HEALTH).setBaseValue(value);
+			player.getAttribute(Attribute.MAX_HEALTH).setBaseValue(value);
 		}
 		catch (LinkageError e)
 		{

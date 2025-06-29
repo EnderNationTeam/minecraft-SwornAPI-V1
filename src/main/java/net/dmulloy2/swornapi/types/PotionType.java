@@ -21,7 +21,7 @@ import java.util.Collection;
 
 import net.dmulloy2.swornapi.util.FormatUtil;
 
-import org.apache.commons.lang.Validate;
+//import org.apache.commons.lang.Validate;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -151,7 +151,7 @@ public enum PotionType
 	 */
 	public static PotionType find(String matcher)
 	{
-		Validate.notNull(matcher, "matcher cannot be null!");
+		//Validate.notNull(matcher, "matcher cannot be null!");
 		matcher = matcher.toLowerCase();
 
 		for (PotionType type : values())
@@ -185,7 +185,7 @@ public enum PotionType
 	// TODO Figure out a good way to use our strings
 	public static String toString(Collection<PotionEffect> effects)
 	{
-		Validate.notNull(effects, "effects cannot be null!");
+		//Validate.notNull(effects, "effects cannot be null!");
 
 		StringJoiner joiner = new StringJoiner(", ");
 		for (PotionEffect effect : effects)

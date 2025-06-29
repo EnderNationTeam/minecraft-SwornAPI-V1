@@ -20,7 +20,7 @@ package net.dmulloy2.swornapi.util;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.lang.Validate;
+//import org.apache.commons.lang.Validate;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -45,7 +45,7 @@ public class InventoryUtil
 	 */
 	public static boolean isEmpty(Inventory inventory)
 	{
-		Validate.notNull(inventory, "inventory cannot be null!");
+		//Validate.notNull(inventory, "inventory cannot be null!");
 
 		for (ItemStack stack : inventory.getContents())
 		{
@@ -72,7 +72,7 @@ public class InventoryUtil
 	 */
 	public static void clear(Inventory inventory)
 	{
-		Validate.notNull(inventory, "inventory cannot be null!");
+		//Validate.notNull(inventory, "inventory cannot be null!");
 
 		inventory.clear();
 
@@ -94,7 +94,7 @@ public class InventoryUtil
 	 */
 	public static Map<Integer, ItemStack> giveItem(Player player, ItemStack item)
 	{
-		Validate.notNull(player, "player cannot be null!");
+		//Validate.notNull(player, "player cannot be null!");
 		return addItems(player.getInventory(), item);
 	}
 
@@ -107,8 +107,8 @@ public class InventoryUtil
 	 */
 	public static Map<Integer, ItemStack> giveItems(Player player, ItemStack... items)
 	{
-		Validate.notNull(player, "player cannot be null!");
-		Validate.noNullElements(items, "items cannot contain null elements!");
+		//Validate.notNull(player, "player cannot be null!");
+		//Validate.noNullElements(items, "items cannot contain null elements!");
 
 		return addItems(player.getInventory(), items);
 	}
@@ -124,8 +124,8 @@ public class InventoryUtil
 	 */
 	public static int amount(Inventory inventory, Material type, short dat)
 	{
-		Validate.notNull(inventory, "inventory cannot be null!");
-		Validate.notNull(type, "type cannot be null!");
+		//Validate.notNull(inventory, "inventory cannot be null!");
+		//Validate.notNull(type, "type cannot be null!");
 
 		int ret = 0;
 		ItemStack[] items = inventory.getContents();
@@ -160,9 +160,9 @@ public class InventoryUtil
 	 */
 	public static void remove(Inventory inventory, Material type, short dat, int amt)
 	{
-		Validate.notNull(inventory, "inventory cannot be null!");
-		Validate.notNull(type, "type cannot be null!");
-		Validate.isTrue(amt > 0, "amt cannot be less than 0!");
+		//Validate.notNull(inventory, "inventory cannot be null!");
+		//Validate.notNull(type, "type cannot be null!");
+		//Validate.isTrue(amt > 0, "amt cannot be less than 0!");
 
 		int start = amt;
 		ItemStack[] items = inventory.getContents();
