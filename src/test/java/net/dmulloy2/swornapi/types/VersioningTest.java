@@ -3,13 +3,13 @@
  */
 package net.dmulloy2.swornapi.types;
 
-//import static org.junit.Assert.assertFalse;
-//import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import net.dmulloy2.swornapi.BukkitTesting;
 
-//import org.junit.BeforeClass;
-//import org.junit.Test;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 /**
  * @author dmulloy2
@@ -17,36 +17,36 @@ import net.dmulloy2.swornapi.BukkitTesting;
 
 public class VersioningTest
 {
-	//@BeforeClass
+	@BeforeClass
 	public static void beforeClass()
 	{
 		BukkitTesting.prepare();
 	}
 
-	//@Test
+	@Test
 	public void testSupported()
 	{
 		Versioning.setVersion(null);
 		// assertEquals(Versioning.getVersion(), Version.MC_111);
-		//assertTrue(Versioning.isSupported());
+		assertTrue(Versioning.isSupported());
 	}
 
-	//@Test
+	@Test
 	public void testUnsupported()
 	{
 		Versioning.setVersion(null);
 		BukkitTesting.setBukkitVersion("4.2.0-R6.9-SNAPSHOT");
-		//assertFalse(Versioning.isSupported());
+		assertFalse(Versioning.isSupported());
 		BukkitTesting.resetBukkitVersion();
 	}
 
-	//@Test
+	@Test
 	public void testDropped()
 	{
 		Versioning.setVersion(null);
 		BukkitTesting.setBukkitVersion("1.7.10-R0.1-SNAPSHOT");
-		//assertTrue(Versioning.getVersion().wasDropped());
-		//assertFalse(Versioning.isSupported());
+		assertTrue(Versioning.getVersion().wasDropped());
+		assertFalse(Versioning.isSupported());
 		BukkitTesting.resetBukkitVersion();
 	}
 }

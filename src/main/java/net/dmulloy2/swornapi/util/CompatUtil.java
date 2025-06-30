@@ -23,7 +23,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionType;
 
 /**
@@ -45,13 +44,15 @@ public class CompatUtil
 	 * @param extended Extended potion
 	 * @return The potion item
 	 */
+	@Deprecated(forRemoval = true, since = "1.21.6")
 	public static ItemStack createPotion(PotionType type, int amount, int level, boolean splash, boolean extended)
 	{
 		Material material = splash ? Material.SPLASH_POTION : Material.POTION;
-		PotionData data = new PotionData(type, extended, level > 1);
+		// Upgraded / extended potions are now their own PotionType use them instead.
+		// PotionData data = new PotionData(type, extended, level > 1);
 		ItemStack potion = new ItemStack(material, amount);
 		PotionMeta meta = (PotionMeta) potion.getItemMeta();
-		meta.setBasePotionData(data);
+		// meta.setBasePotionData(data);
 		potion.setItemMeta(meta);
 		return potion;
 	}

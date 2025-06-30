@@ -36,6 +36,14 @@ public class Versioning
 	public enum Version
 	{
 		/**
+		 * Minecraft 1.21 – Archaeology, cherry blossoms, new mobs
+		 */
+		MC_121("Minecraft 1.21.x", "1.21"),
+		/**
+		 * Minecraft 1.20 – Trails & Tales, bamboo wood, new mobs
+		 */
+		MC_120("Minecraft 1.20.x", "1.20"),
+		/**
 		 * Minecraft 1.19, the wild update
 		 */
 		MC_119("Minecraft 1.19.x", "1.19"),

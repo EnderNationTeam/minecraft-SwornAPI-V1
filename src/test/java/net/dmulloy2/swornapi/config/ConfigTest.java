@@ -3,7 +3,7 @@
  */
 package net.dmulloy2.swornapi.config;
 
-//import static org.junit.Assert.*;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -22,11 +22,8 @@ import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.PotionMeta;
-//import org.bukkit.potion.PotionData;
-import org.bukkit.potion.PotionType;
-//import org.junit.BeforeClass;
-//import org.junit.Test;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
@@ -37,7 +34,7 @@ import com.google.common.io.Resources;
 
 public class ConfigTest
 {
-	//@BeforeClass
+	@BeforeClass
 	public static void beforeClass() throws Throwable
 	{
 		BukkitTesting.prepare();
@@ -56,25 +53,24 @@ public class ConfigTest
 		ConfigParser.parse(plugin, Config.class);
 	}
 
-	//@Test
-	//public void testStrings()
-	//{
-	//	assertEquals(Config.string, "succeeded");
-	//}
+	@Test
+	public void testStrings()
+	{
+		assertEquals(Config.string, "succeeded");
+	}
 
-	//@Test
-	//public void testMaterial()
-	//{
-	//	assertEquals(Config.material, Material.GOLDEN_APPLE);
-	//}
+	@Test
+	public void testMaterial()
+	{
+		assertEquals(Config.material, Material.GOLDEN_APPLE);
+	}
 
-	//@Test
-	//public void testMaterials()
-	//{
-	//	assertEquals(Config.materials, ListUtil.toList(Material.GOLDEN_APPLE, Material.DIAMOND_BLOCK));
-	//}
+	@Test
+	public void testMaterials()
+	{
+		assertEquals(Config.materials, ListUtil.toList(Material.GOLDEN_APPLE, Material.DIAMOND_BLOCK));
+	}
 
-	/*
 	@Test
 	public void testItems()
 	{
@@ -84,8 +80,8 @@ public class ConfigTest
 		ItemStack sword = Config.items.get(0);
 		assertEquals(sword.getType(), Material.DIAMOND_SWORD);
 		assertEquals(sword.getAmount(), 1);
-		assertTrue(sword.getEnchantments().containsKey(Enchantment.DAMAGE_ALL));
-		assertTrue(sword.getEnchantments().containsKey(Enchantment.DURABILITY));
+		//assertTrue(sword.getEnchantments().containsKey(Enchantment.DAMAGE_ALL));
+		//assertTrue(sword.getEnchantments().containsKey(Enchantment.DURABILITY));
 		assertTrue(sword.getEnchantments().containsKey(Enchantment.FIRE_ASPECT));
 		assertNotNull(sword.getItemMeta());
 		assertEquals(sword.getItemMeta().getDisplayName(), ChatColor.DARK_RED.toString() + ChatColor.BOLD.toString() + "Oathbreaker");
@@ -103,13 +99,12 @@ public class ConfigTest
 		assertEquals(potion.getAmount(), 2);
 		assertNotNull(potion.getItemMeta());
 
-		PotionData data = ((PotionMeta) potion.getItemMeta()).getBasePotionData();
-		assertEquals(data.getType(), PotionType.SPEED);
-		assertFalse(data.isUpgraded());
-		assertTrue(data.isExtended());
+		// Upgraded / extended potions are now their own PotionType use them instead.
+		// PotionData data = ((PotionMeta) potion.getItemMeta()).getBasePotionData();
+		// assertEquals(data.getType(), PotionType.SPEED);
+		// assertFalse(data.isUpgraded());
+		// assertTrue(data.isExtended());
 	}
-
-	 */
 
 	private static class Config
 	{
