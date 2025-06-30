@@ -21,7 +21,7 @@ import net.dmulloy2.swornapi.SwornPlugin;
 import net.dmulloy2.swornapi.util.FormatUtil;
 import net.dmulloy2.swornapi.util.NumberUtil;
 
-//import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -40,8 +40,8 @@ public abstract class AbstractGUI
 
 	public AbstractGUI(SwornPlugin plugin, Player player)
 	{
-		//Validate.notNull(plugin, "plugin cannot be null");
-		//Validate.notNull(player, "player cannot be null!");
+		Validate.notNull(plugin, "plugin cannot be null");
+		Validate.notNull(player, "player cannot be null!");
 		this.player = player;
 		this.plugin = plugin;
 	}
@@ -57,12 +57,12 @@ public abstract class AbstractGUI
 	{
 		// Size checks
 		int size = NumberUtil.roundUp(getSize(), 9);
-		//Validate.isTrue(size > 0, "Inventory size must not be negative!");
-		//Validate.isTrue(size <= 54, "Inventory size is too large! (" + size + " > 54)");
+		Validate.isTrue(size > 0, "Inventory size must not be negative!");
+		Validate.isTrue(size <= 54, "Inventory size is too large! (" + size + " > 54)");
 
 		// Validate title
 		String title = getTitle();
-		//Validate.notNull(title, "Inventory title cannot be null!");
+		Validate.notNull(title, "Inventory title cannot be null!");
 		title = FormatUtil.format(getTitle());
 
 		Inventory inventory;

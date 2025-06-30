@@ -101,7 +101,7 @@
       <artifactId>spigot-api</artifactId>
       <version>1.21.5-R0.1-SNAPSHOT</version>
     </dependency>
-    <!-- DMCA
+    <!-- Removed by DMCA
     <dependency>
       <groupId>org.spigotmc</groupId>
       <artifactId>spigot</artifactId>
@@ -118,6 +118,11 @@
       <groupId>com.comphenix.protocol</groupId>
       <artifactId>ProtocolLib</artifactId>
       <version>5.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.17.0</version>
     </dependency>
 
     <!-- Testing -->

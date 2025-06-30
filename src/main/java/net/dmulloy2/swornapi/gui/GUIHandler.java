@@ -22,7 +22,7 @@ import java.util.Map;
 
 import net.dmulloy2.swornapi.SwornPlugin;
 
-//import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -54,8 +54,8 @@ public class GUIHandler implements Listener
 	 */
 	public void open(Player player, AbstractGUI gui)
 	{
-		//Validate.notNull(player, "player cannot be null!");
-		//Validate.notNull(gui, "gui cannot be null!");
+		Validate.notNull(player, "player cannot be null!");
+		Validate.notNull(gui, "gui cannot be null!");
 		open.put(player.getName(), gui);
 	}
 
@@ -66,7 +66,7 @@ public class GUIHandler implements Listener
 	 */
 	public void open(AbstractGUI gui)
 	{
-		//Validate.notNull(gui, "gui cannot be null!");
+		Validate.notNull(gui, "gui cannot be null!");
 		open(gui.getPlayer(), gui);
 	}
 

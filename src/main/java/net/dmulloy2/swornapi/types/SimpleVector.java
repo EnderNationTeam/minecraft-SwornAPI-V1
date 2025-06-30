@@ -24,7 +24,7 @@ import java.util.Objects;
 import lombok.Getter;
 import net.dmulloy2.swornapi.util.NumberUtil;
 
-//import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
@@ -69,7 +69,7 @@ public final class SimpleVector implements ConfigurationSerializable, Cloneable
 
 	public SimpleVector(String s)
 	{
-		//Validate.notEmpty(s, "s cannot be null or empty!");
+		Validate.notEmpty(s, "s cannot be null or empty!");
 
 		String[] ss = s.split(",");
 		this.x = NumberUtil.toInt(ss[0]);

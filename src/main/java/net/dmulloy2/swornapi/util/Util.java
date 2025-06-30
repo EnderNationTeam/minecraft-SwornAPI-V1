@@ -28,7 +28,7 @@ import java.util.UUID;
 
 import net.dmulloy2.swornapi.types.StringJoiner;
 
-//import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.Location;
@@ -55,7 +55,7 @@ public class Util
 	 */
 	public static Player matchPlayer(String identifier)
 	{
-		//Validate.notNull(identifier, "identifier cannot be null!");
+		Validate.notNull(identifier, "identifier cannot be null!");
 
 		// First, get by UUID
 		if (identifier.length() == 36)
@@ -78,7 +78,7 @@ public class Util
 	@SuppressWarnings("deprecation") // Bukkit#getOfflinePlayer(String)
 	public static OfflinePlayer matchOfflinePlayer(String identifier)
 	{
-		//Validate.notNull(identifier, "identifier cannot be null!");
+		Validate.notNull(identifier, "identifier cannot be null!");
 
 		// First, check online players
 		Player player = matchPlayer(identifier);
@@ -114,8 +114,8 @@ public class Util
 	 */
 	public static <T> void playEffect(Effect effect, Location loc, T data)
 	{
-		//Validate.notNull(effect, "effect cannot be null!");
-		//Validate.notNull(loc, "loc cannot be null!");
+		Validate.notNull(effect, "effect cannot be null!");
+		Validate.notNull(loc, "loc cannot be null!");
 
 		for (Player player : getOnlinePlayers())
 		{
@@ -134,8 +134,8 @@ public class Util
 	 */
 	public static boolean coordsEqual(Location first, Location second)
 	{
-		//Validate.notNull(first, "first location cannot be null!");
-		//Validate.notNull(second, "second location cannot be null!");
+		Validate.notNull(first, "first location cannot be null!");
+		Validate.notNull(second, "second location cannot be null!");
 
 		return first.equals(second) || first.getBlock().equals(second.getBlock());
 	}
@@ -148,7 +148,7 @@ public class Util
 	 */
 	public static String locationToString(Location loc)
 	{
-		//Validate.notNull(loc, "loc cannot be null!");
+		Validate.notNull(loc, "loc cannot be null!");
 
 		return "Location[world=" + loc.getWorld().getName() +
 				", x=" + loc.getBlockX() +
@@ -167,7 +167,7 @@ public class Util
 	 */
 	public static int random(int x)
 	{
-		//Validate.isTrue(x > 0, "x cannot be negative!");
+		Validate.isTrue(x > 0, "x cannot be negative!");
 
 		if (random == null)
 			random = new Random();
@@ -207,7 +207,7 @@ public class Util
 	 */
 	public static String getUsefulStack(Throwable ex, String circumstance, Object... args)
 	{
-		//Validate.notNull(ex, "ex cannot be null!");
+		Validate.notNull(ex, "ex cannot be null!");
 
 		StringJoiner joiner = new StringJoiner("\n");
 		circumstance = circumstance != null ? FormatUtil.format(" while " + circumstance, args) : "";
@@ -289,8 +289,8 @@ public class Util
 	 */
 	public static <K, V> Map<K, V> filterDuplicateEntries(Map<K, V> map, Map<K, V> original)
 	{
-		//Validate.notNull(map, "map cannot be null!");
-		//Validate.notNull(original, "original cannot be null!");
+		Validate.notNull(map, "map cannot be null!");
+		Validate.notNull(original, "original cannot be null!");
 
 		Iterator<Entry<K, V>> iter = map.entrySet().iterator();
 		while (iter.hasNext())
@@ -319,7 +319,7 @@ public class Util
 	 */
 	public static boolean toBoolean(Object object)
 	{
-		//Validate.notNull(object, "object cannot be null!");
+		Validate.notNull(object, "object cannot be null!");
 
 		if (object instanceof Boolean)
 		{

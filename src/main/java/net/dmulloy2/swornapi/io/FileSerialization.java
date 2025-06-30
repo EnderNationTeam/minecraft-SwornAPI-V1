@@ -31,7 +31,7 @@ import java.util.concurrent.ConcurrentMap;
 
 import net.dmulloy2.swornapi.handlers.LogHandler;
 import net.dmulloy2.swornapi.util.Util;
-//import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
@@ -61,8 +61,8 @@ public class FileSerialization
 	@SuppressWarnings("unchecked")
 	public static <T extends ConfigurationSerializable> T load(File file, Class<T> clazz, boolean exists) throws IOException, InvalidConfigurationException
 	{
-		//Validate.notNull(file, "file cannot be null!");
-		//Validate.notNull(clazz, "clazz cannot be null!");
+		Validate.notNull(file, "file cannot be null!");
+		Validate.notNull(clazz, "clazz cannot be null!");
 
 		if (! exists && ! file.exists())
 			return null;
@@ -96,8 +96,8 @@ public class FileSerialization
 	 */
 	public static void save(ConfigurationSerializable instance, File file) throws IOException
 	{
-		//Validate.notNull(instance, "instance cannot be null!");
-		//Validate.notNull(file, "file cannot be null!");
+		Validate.notNull(instance, "instance cannot be null!");
+		Validate.notNull(file, "file cannot be null!");
 
 		file.delete();
 		file.createNewFile();

@@ -30,7 +30,7 @@ import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.*;
 import net.md_5.bungee.api.chat.hover.content.Text;
 
-//import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.BlockCommandSender;
@@ -223,7 +223,7 @@ public abstract class Command implements CommandExecutor
 	 */
 	protected final boolean hasPermission(CommandSender sender, IPermission permission, boolean message)
 	{
-		//Validate.notNull(sender, "sender cannot be null!");
+		Validate.notNull(sender, "sender cannot be null!");
 
 		if (! plugin.getPermissionHandler().hasPermission(sender, permission))
 		{
@@ -289,7 +289,7 @@ public abstract class Command implements CommandExecutor
 	 */
 	protected final String getPermissionString(IPermission permission)
 	{
-		//Validate.notNull(permission, "permission cannot be null!");
+		Validate.notNull(permission, "permission cannot be null!");
 
 		return plugin.getPermissionHandler().getPermissionString(permission);
 	}
@@ -313,7 +313,7 @@ public abstract class Command implements CommandExecutor
 	 */
 	public final boolean isVisibleTo(CommandSender sender)
 	{
-		//Validate.notNull(sender, "sender cannot be null!");
+		Validate.notNull(sender, "sender cannot be null!");
 
 		return switch (visibility) {
 			case ALL -> true;
@@ -343,7 +343,7 @@ public abstract class Command implements CommandExecutor
 	 */
 	protected final void err(String message, Object... args)
 	{
-		//Validate.notNull(message, "message cannot be null!");
+		Validate.notNull(message, "message cannot be null!");
 		sender.sendMessage(format(props().getErrorPrefix() + message, args));
 	}
 
@@ -355,7 +355,7 @@ public abstract class Command implements CommandExecutor
 	 */
 	protected final void sendpMessage(String message, Object... args)
 	{
-		//Validate.notNull(message, "message cannot be null!");
+		Validate.notNull(message, "message cannot be null!");
 		sender.sendMessage(format(plugin.getPrefix() + message, args));
 	}
 
@@ -367,7 +367,7 @@ public abstract class Command implements CommandExecutor
 	 */
 	protected final void sendMessage(String message, Object... args)
 	{
-		//Validate.notNull(message, "message cannot be null");
+		Validate.notNull(message, "message cannot be null");
 		sender.sendMessage(format(props().getBaseColor() + message, args));
 	}
 
@@ -380,8 +380,8 @@ public abstract class Command implements CommandExecutor
 	 */
 	protected final void err(CommandSender sender, String message, Object... args)
 	{
-		//Validate.notNull(sender, "sender cannot be null!");
-		//Validate.notNull(message, "message cannot be null!");
+		Validate.notNull(sender, "sender cannot be null!");
+		Validate.notNull(message, "message cannot be null!");
 
 		sender.sendMessage(format(props().getErrorPrefix() + message, args));
 	}
@@ -395,8 +395,8 @@ public abstract class Command implements CommandExecutor
 	 */
 	protected final void sendpMessage(CommandSender sender, String message, Object... args)
 	{
-		//Validate.notNull(sender, "sender cannot be null!");
-		//Validate.notNull(message, "message cannot be null!");
+		Validate.notNull(sender, "sender cannot be null!");
+		Validate.notNull(message, "message cannot be null!");
 
 		sender.sendMessage(format(plugin.getPrefix() + message, args));
 	}
@@ -410,8 +410,8 @@ public abstract class Command implements CommandExecutor
 	 */
 	protected final void sendMessage(CommandSender sender, String message, Object... args)
 	{
-		//Validate.notNull(sender, "sender cannot be null!");
-		//Validate.notNull(message, "message cannot be null!");
+		Validate.notNull(sender, "sender cannot be null!");
+		Validate.notNull(message, "message cannot be null!");
 
 		sender.sendMessage(format(props().getBaseColor() + message, args));
 	}
@@ -894,7 +894,7 @@ public abstract class Command implements CommandExecutor
 	 */
 	protected final String getName(CommandSender sender, CommandSender target, boolean subject)
 	{
-		//Validate.notNull(sender, "sender cannot be null!");
+		Validate.notNull(sender, "sender cannot be null!");
 
 		if (sender.equals(target))
 		{

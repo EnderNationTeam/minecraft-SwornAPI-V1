@@ -24,7 +24,7 @@ import java.util.Objects;
 import lombok.Getter;
 import lombok.Setter;
 
-//import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -54,7 +54,7 @@ public final class LazyLocation implements ConfigurationSerializable, Cloneable
 
 	public LazyLocation(String worldName, int x, int y, int z)
 	{
-		//Validate.notNull(worldName, "worldName cannot be null!");
+		Validate.notNull(worldName, "worldName cannot be null!");
 		this.worldName = worldName;
 		this.x = x;
 		this.y = y;
@@ -90,7 +90,7 @@ public final class LazyLocation implements ConfigurationSerializable, Cloneable
 
 	public LazyLocation(Map<String, Object> args)
 	{
-		//Validate.notNull(args, "args cannot be null!");
+		Validate.notNull(args, "args cannot be null!");
 		this.worldName = (String) args.get("worldName");
 		this.x = (int) args.get("x");
 		this.y = (int) args.get("y");

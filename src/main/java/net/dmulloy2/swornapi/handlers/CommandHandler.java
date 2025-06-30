@@ -29,7 +29,7 @@ import net.dmulloy2.swornapi.util.FormatUtil;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 
-//import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.PluginCommand;
@@ -61,7 +61,7 @@ public class CommandHandler implements CommandExecutor
 	 */
 	public void registerCommand(Command command)
 	{
-		//Validate.notNull(command, "command cannot be null!");
+		Validate.notNull(command, "command cannot be null!");
 		PluginCommand pluginCommand = plugin.getCommand(command.getName());
 		if (pluginCommand != null)
 		{
@@ -82,7 +82,7 @@ public class CommandHandler implements CommandExecutor
 	 */
 	public void registerPrefixedCommand(Command command)
 	{
-		//Validate.notNull(command, "command cannot be null!");
+		Validate.notNull(command, "command cannot be null!");
 		if (commandPrefix != null)
 			registeredPrefixedCommands.add(command);
 	}
@@ -125,7 +125,7 @@ public class CommandHandler implements CommandExecutor
 	 */
 	public void setCommandPrefix(String commandPrefix)
 	{
-		//Validate.notEmpty(commandPrefix, "prefix cannot be null or empty!");
+		Validate.notEmpty(commandPrefix, "prefix cannot be null or empty!");
 		this.commandPrefix = commandPrefix;
 		this.registeredPrefixedCommands = new ArrayList<>();
 
@@ -150,7 +150,7 @@ public class CommandHandler implements CommandExecutor
 	 */
 	public final Command getCommand(String name)
 	{
-		//Validate.notNull(name, "name cannot be null!");
+		Validate.notNull(name, "name cannot be null!");
 		for (Command command : registeredPrefixedCommands)
 		{
 			if (name.equalsIgnoreCase(command.getName()) || command.getAliases().contains(name.toLowerCase()))

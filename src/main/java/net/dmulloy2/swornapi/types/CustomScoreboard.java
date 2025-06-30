@@ -23,7 +23,7 @@ import java.util.Map;
 
 import net.dmulloy2.swornapi.util.FormatUtil;
 
-//import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -128,8 +128,8 @@ public final class CustomScoreboard
 	 */
 	public void addEntry(String key, Object value)
 	{
-		//Validate.notNull(key, "key cannot be null!");
-		//Validate.notNull(value, "value cannot be null!");
+		Validate.notNull(key, "key cannot be null!");
+		Validate.notNull(value, "value cannot be null!");
 
 		addOrReplace(new Entry(key, String.valueOf(value)));
 	}
@@ -142,7 +142,7 @@ public final class CustomScoreboard
 	 */
 	public void addEntry(String line)
 	{
-		//Validate.notNull(line, "line cannot be null!");
+		Validate.notNull(line, "line cannot be null!");
 
 		addOrReplace(new Entry(line));
 	}
@@ -161,7 +161,7 @@ public final class CustomScoreboard
 	 */
 	public void addEntries(Map<String, Object> entries)
 	{
-		//Validate.notNull(entries, "entries cannot be null!");
+		Validate.notNull(entries, "entries cannot be null!");
 
 		for (Map.Entry<String, Object> entry : entries.entrySet())
 		{
@@ -279,9 +279,9 @@ public final class CustomScoreboard
 
 	private void validate()
 	{
-		//Validate.notNull(display, "display cannot be null!");
-		//Validate.notNull(slot, "slot cannot be null!");
-		//Validate.notNull(format, "format cannot be null!");
+		Validate.notNull(display, "display cannot be null!");
+		Validate.notNull(slot, "slot cannot be null!");
+		Validate.notNull(format, "format cannot be null!");
 	}
 
 	/**
@@ -303,7 +303,7 @@ public final class CustomScoreboard
 		 */
 		public Builder displayName(String display)
 		{
-			//Validate.notNull(display, "display cannot be null!");
+			Validate.notNull(display, "display cannot be null!");
 			board.display = display;
 			return this;
 		}
@@ -315,7 +315,7 @@ public final class CustomScoreboard
 		 */
 		public Builder displaySlot(DisplaySlot slot)
 		{
-			//Validate.notNull(slot, "slot cannot be null!");
+			Validate.notNull(slot, "slot cannot be null!");
 			board.slot = slot;
 			return this;
 		}
@@ -327,7 +327,7 @@ public final class CustomScoreboard
 		 */
 		public Builder entryFormat(EntryFormat format)
 		{
-			//Validate.notNull(format, "format cannot be null!");
+			Validate.notNull(format, "format cannot be null!");
 			board.format = format;
 			return this;
 		}
@@ -339,7 +339,7 @@ public final class CustomScoreboard
 		 */
 		public Builder keyPrefix(String prefix)
 		{
-			//Validate.notNull(prefix, "prefix cannot be null!");
+			Validate.notNull(prefix, "prefix cannot be null!");
 			board.keyPrefix = prefix;
 			return this;
 		}
@@ -351,7 +351,7 @@ public final class CustomScoreboard
 		 */
 		public Builder valuePrefix(String prefix)
 		{
-			//Validate.notNull(prefix, "prefix cannot be null!");
+			Validate.notNull(prefix, "prefix cannot be null!");
 			board.valuePrefix = prefix;
 			return this;
 		}
@@ -363,7 +363,7 @@ public final class CustomScoreboard
 		 */
 		public Builder minLength(int minLength)
 		{
-			//Validate.isTrue(minLength > 0, "minLength must be > 0");
+			Validate.isTrue(minLength > 0, "minLength must be > 0");
 			board.minLength = minLength;
 			return this;
 		}
@@ -425,8 +425,8 @@ public final class CustomScoreboard
 	 */
 	public static Builder newBuilder(Scoreboard board, String objective)
 	{
-		//Validate.notNull(board, "board cannot be null!");
-		//Validate.notNull(objective, "objective cannot be null!");
+		Validate.notNull(board, "board cannot be null!");
+		Validate.notNull(objective, "objective cannot be null!");
 
 		return new Builder(board, objective);
 	}
